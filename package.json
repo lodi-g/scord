@@ -1,0 +1,24 @@
+{
+  "name": "scord",
+  "version": "0.0.1",
+  "description": "A discord selfbot made with Discord.js",
+  "main": "app.js",
+  "scripts": {
+    "test": "node app.js",
+    "start": "node app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lodi-g/scord.git"
+  },
+  "author": "lodi-g",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/lodi-g/vsh-api/issues"
+  },
+  "homepage": "https://github.com/lodi-g/vsh-api#readme",
+  "dependencies": {
+    "discord.js": "^11.1.0"
+  },
+  "devDependencies": {}
+}
