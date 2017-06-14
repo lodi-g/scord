@@ -26,8 +26,15 @@ bot.on('message', (msg) => {
   console.log(`Received command ${cmd} with args ${args}`);
 
   commands.forEach((el) => {
-    if (el.cmd === cmd)
-      el.run(msg, args);
+    if (el.cmd === cmd) {
+      try {
+        el.run(msg, args);
+      }
+      catch (e) {
+        msg.edit('Failed.');
+        console.error(e);
+      }
+    }
   });
 
 });
