@@ -1,7 +1,6 @@
 const manager = require('../app.js');
 
 module.exports = {
-  name: 'help',
   help: 'Display this help!',
   cmd: 'help',
 

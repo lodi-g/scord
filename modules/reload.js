@@ -3,7 +3,6 @@ const path = require('path');
 const manager = require('../app');
 
 module.exports = {
-  name: 'reload',
   help: 'Reload all modules',
   cmd: 'reload',
 
@@ -17,9 +16,15 @@ module.exports = {
     const files = fs.readdirSync(__dirname);
 
     files.forEach((filename) => {
+      let mod;
+
       delete require.cache[require.resolve(path.join(__dirname, filename))];
-      let mod = require(path.join(__dirname, filename));
-      manager.register(mod);
+      try {
+        mod = require(path.join(__dirname, filename));
+        manager.register(mod);
+      } catch (e) {
+        console.error(`Cannot load ${filename}: ${e}.`);
+      }
     });
 
     msg.edit('Reloaded!')
