@@ -1,10 +1,10 @@
 module.exports = {
+  name: 'aapingaaa',
+  help: 'Pong!',
+  cmd: 'ping',
   run: (msg, args) => {
-    msg.edit('Ponaeazeag!')
+    msg.edit('Pong!')
       .then()
-      .catch(err => console.error(err));
-  },
-  name: 'ping',
-  help: "Pong!",
-  cmd: "ping"
+      .catch(console.error);
+  }
 };
