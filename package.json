@@ -18,7 +18,8 @@
   },
   "homepage": "https://github.com/lodi-g/vsh-api#readme",
   "dependencies": {
-    "discord.js": "^11.1.0"
+    "discord.js": "^11.1.0",
+    "request": "^2.81.0"
   },
   "devDependencies": {}
 }
