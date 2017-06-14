@@ -2,16 +2,12 @@ const manager = require('../app.js');
 
 module.exports = {
   run: (msg, args) => {
-    let helpMsg = '```';
     let commands = manager.commands;
+    let helpMsg = '```';
 
     commands.forEach((el) => {
-      helpMsg += el.name;
-      helpMsg += '\t';
-      helpMsg += el.help;
-      helpMsg += '\n';
+      helpMsg += `${el.name}\t${el.help}\n`;
     });
-
     helpMsg += '```';
 
     msg.edit(helpMsg)
@@ -19,6 +15,6 @@ module.exports = {
       .catch(console.error);
   },
   name: 'help',
-  help: "Display this help!",
-  cmd: "help"
+  help: 'Display this help!',
+  cmd: 'help'
 };
