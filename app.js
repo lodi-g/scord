@@ -23,17 +23,10 @@ bot.on('message', (msg) => {
   const args = msg.content.split(" ").splice(1);
 
   let commands = manager.commands;
-  console.log(`Received command ${cmd} with args ${args}`);
 
   commands.forEach((el) => {
     if (el.cmd === cmd) {
-      try {
-        el.run(msg, args);
-      }
-      catch (e) {
-        msg.edit('Failed.');
-        console.error(e);
-      }
+      manager.run(el, msg, args);
     }
   });
 
@@ -48,9 +41,14 @@ fs.readdir(path.join(__dirname, 'modules'), (err, files) => {
     throw new Error(err);
 
   files.forEach((filename) => {
-    let mod = require(path.join(__dirname, 'modules', filename));
-    manager.register(mod);
-    console.log(`Loaded module ${mod.name}.`);
+    let mod;
+
+    try {
+      mod = require(path.join(__dirname, 'modules', filename));
+      manager.register(mod);
+    } catch (e) {
+      console.error(`Cannot load ${filename}: ${e}.`);
+    }
   });
 });
 
