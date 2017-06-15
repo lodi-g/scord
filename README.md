@@ -53,7 +53,7 @@ A simple Discord selfbot written in Node.JS.
   * Google Search
 
 ## Thanks for reading
-* And also thanks to [LazyShpee](github.com/LazyShpee/) for helping me countless times.
+* And also thanks to [LazyShpee](https://github.com/LazyShpee/) for helping me countless times.
 
 ## License
 * WTFPL
