@@ -9,7 +9,7 @@ module.exports = {
     let helpMsg = '```';
 
     commands.forEach((el) => {
-      helpMsg += `${el.cmd}\t${el.help}\n`;
+      helpMsg += `${el.cmd}\t\t${el.help}\n`;
     });
     helpMsg += '```';
 
