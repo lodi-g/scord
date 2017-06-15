@@ -35,7 +35,7 @@ bot.on('message', (msg) => {
 
 // Retrieve configuration
 const config = require(path.join(__dirname, 'config', 'config.json'));
-if (typeof config.prefix !== 'number' || config.prefix === '') {
+if (typeof config.prefix !== 'string' || config.prefix === '') {
   console.error('scord: invalid prefix.');
   process.exit(1);
 }
