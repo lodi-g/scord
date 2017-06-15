@@ -10,10 +10,10 @@ module.exports = {
     if (code === '')
       return msg.delete().then().catch(console.error);
 
-    const script = new vm.Script(code);
-    const sandbox = { msg: msg };
+    const sandbox = { msg: msg, require: require };
 
     try {
+      const script = new vm.Script(code);
       script.runInNewContext(sandbox);
     } catch (e) {
       msg.edit(`eval: ${e}`).then().catch(console.error);
