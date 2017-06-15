@@ -1,12 +1,13 @@
 const fs = require('fs');
 const path = require('path');
 const Discord = require('discord.js');
-const config = require('./config/config.json');
+
 const CommandsManager = require('./commands');
 
 const bot = new Discord.Client();
 const manager = new CommandsManager();
 
+// Registering events
 bot.on('ready', () => {
   console.log('scord is ready!');
 });
@@ -32,7 +33,19 @@ bot.on('message', (msg) => {
 
 });
 
+// Retrieve configuration
+const config = require(path.join(__dirname, 'config', 'config.json'));
+if (typeof config.prefix !== 'number' || config.prefix === '') {
+  console.error('scord: invalid prefix.');
+  process.exit(1);
+}
+if (typeof config.token !== 'string' || config.token === '') {
+  console.error('scord: invalid token.');
+  process.exit(1);
+}
+
 // Login
+console.log(`Starting scord with prefix '${config.prefix}'.`);
 bot.login(config.token);
 
 // Load all modules
@@ -46,6 +59,7 @@ fs.readdir(path.join(__dirname, 'modules'), (err, files) => {
     try {
       mod = require(path.join(__dirname, 'modules', filename));
       manager.register(mod);
+      console.log(`Loaded module ${filename}`);
     } catch (e) {
       console.error(`Cannot load ${filename}: ${e}.`);
     }
