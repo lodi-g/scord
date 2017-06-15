@@ -8,10 +8,6 @@ module.exports = {
   args: 1,
 
   run: function(msg, args) {
-
-    if (args[0] === undefined)
-      return msg.edit('Please specify a currency.').then().catch(console.error);
-
     msg.edit('Processing...')
       .then()
       .catch(console.error);
