@@ -1,1 +1,56 @@
 # scord
+
+A simple Discord selfbot written in Node.JS.
+
+## Getting started
+
+### Requirements
+* Linux (probably works with others OS - not tested)
+* Node.JS >= v8.0.0 (probably works with older versions - not tested)
+* npm >= v5.0.0 (probably works with older versions - not tested)
+
+### Installing
+* `git clone https://github.com/lodi-g/scord`
+* `cd scord && npm install`
+
+### Configuring
+* `cp config/config.example.json config/config.json`
+* Edit the `config/config.json` with your Discord token and wanted prefix.
+
+### Starting
+* `node app.js`
+
+## Writing your own modules
+### Intro
+* With *scord*, there is a small static core and everything else is a module (reload, help etc).
+* To write your own modules you just need to add a file in the modules/ folder.
+* The file must be a valid JavaScript file.
+* *scord* uses the `discord.js` module.
+
+
+### Adding a module file
+* This file must export only two things: a `cmd` field (type `String`), and a `run` function. The `cmd` field describes the command that will run the `run` function.
+* You may as well export a `help` field (type: String) that will be used by the `help` command.
+* You may as well export an `args` field (type: Number). It will be used to verify the number of arguments is perfectly valid. If you expect a variadic number of arguments, it won't be useful.
+
+
+### The run function
+* The `run` function is the function called when you will type `${prefix}${cmd}`.
+* The `run` function accepts two parameters: a `msg` (an instance of the `Message` class from `discord.js`), representing the sent message, and an `args` (type: Array) representing the arguments.
+
+### Accessing commands
+* You may need to access current commands (as I did to write the `reload` and `help` modules).
+* `require('../app')` is the only thing needed to access the commands. `app.js` exports an instance of the CommandsManager class. Its definition is trivial and can be read in the `commands.js` file.
+
+### Examples
+* All current modules can be used as examples. They use all the feature described above and each file is less than 50 lines of code.
+
+## Todo
+* Core:
+  * Logging with different levels of verbosity
+* Modules:
+  * Translate
+  * Google Search
+
+## Thanks for reading
+* And also thanks to [LazyShpee](github.com/LazyShpee/) for helping me countless times.
