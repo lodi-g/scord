@@ -5,7 +5,7 @@ A simple Discord selfbot written in Node.JS.
 ## Getting started
 
 ### Requirements
-* Linux (probably works with others OS - not tested)
+* Linux, macOS (probably works with others OS - not tested)
 * Node.JS >= v8.0.0 (probably works with older versions - not tested)
 * npm >= v5.0.0 (probably works with older versions - not tested)
 
@@ -53,7 +53,7 @@ A simple Discord selfbot written in Node.JS.
   * Google Search
 
 ## Thanks for reading
-* And also thanks to [LazyShpee](github.com/LazyShpee/) for helping me countless times.
+* And also thanks to [LazyShpee](https://github.com/LazyShpee/) for helping me countless times.
 
 ## License
 * WTFPL
