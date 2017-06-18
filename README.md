@@ -51,6 +51,9 @@ A simple Discord selfbot written in Node.JS.
 * Modules:
   * Translate
   * Google Search
+  * Quote
+  * Set game
+  * Game API?
 
 ## Thanks for reading
 * And also thanks to [LazyShpee](https://github.com/LazyShpee/) for helping me countless times.
