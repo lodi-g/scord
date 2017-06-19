@@ -4,7 +4,7 @@ module.exports = {
   help: 'Run argument in a sandbox',
   cmd: 'eval',
 
-  run: function(msg, args) {
+  run: (msg, args) => {
     let code = args.join(' ');
 
     if (code === '')

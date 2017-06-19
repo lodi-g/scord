@@ -7,7 +7,7 @@ module.exports = {
   cmd: 'crypto',
   args: 1,
 
-  run: function(msg, args) {
+  run: (msg, args) => {
     msg.edit('Processing...')
       .then()
       .catch(console.error);
