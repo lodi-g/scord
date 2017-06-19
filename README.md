@@ -58,7 +58,6 @@ A simple Discord selfbot written in Node.JS.
   * Translate
   * Google Search
   * Quote
-  * Set game
   * Game API?
 
 ## Thanks for reading
