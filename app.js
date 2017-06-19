@@ -10,6 +10,7 @@ const manager = new CommandsManager();
 // Registering events
 bot.on('ready', () => {
   console.log('scord is ready!');
+  module.exports.user = bot.user;
 });
 
 bot.on('message', (msg) => {
@@ -54,10 +55,8 @@ fs.readdir(path.join(__dirname, 'modules'), (err, files) => {
     throw new Error(err);
 
   files.forEach((filename) => {
-    let mod;
-
     try {
-      mod = require(path.join(__dirname, 'modules', filename));
+      const mod = require(path.join(__dirname, 'modules', filename));
       manager.register(mod);
       console.log(`Loaded module ${filename}`);
     } catch (e) {
@@ -66,5 +65,8 @@ fs.readdir(path.join(__dirname, 'modules'), (err, files) => {
   });
 });
 
-// Export manager in case it is needed for a module (eg help or reload)
-module.exports = manager;
+// Export manager and user in case it is needed for a module (eg help or reload)
+module.exports = {
+  manager: manager,
+  user: bot.user
+}
