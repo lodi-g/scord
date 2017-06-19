@@ -20,13 +20,13 @@ class CommandsManager {
 
   run(el, msg, args) {
     if (el.args && el.args !== args.length)
-      return msg.edit(`\`${el.cmd}\` requires ${el.args} arguments.`).then().catch(console.error);
+      return msg.edit(`\`${el.cmd}\` requires ${el.args} argument(s).`).then().catch(console.error);
 
     try {
       el.run(msg, args);
     }
     catch (e) {
-      msg.edit('Failed.');
+      msg.edit('Failed.').then().catch(console.error);
       console.error(e);
     }
   }
