@@ -1,4 +1,4 @@
-const manager = require('../app.js');
+const manager = require('../app.js').manager;
 
 module.exports = {
   help: 'Display this help!',

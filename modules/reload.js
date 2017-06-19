@@ -1,6 +1,6 @@
 const fs = require('fs');
 const path = require('path');
-const manager = require('../app');
+const manager = require('../app').manager;
 
 module.exports = {
   help: 'Reload all modules',
@@ -16,11 +16,9 @@ module.exports = {
     const files = fs.readdirSync(__dirname);
 
     files.forEach((filename) => {
-      let mod;
-
       delete require.cache[require.resolve(path.join(__dirname, filename))];
       try {
-        mod = require(path.join(__dirname, filename));
+        const mod = require(path.join(__dirname, filename));
         manager.register(mod);
       } catch (e) {
         console.error(`Cannot load ${filename}: ${e}.`);
