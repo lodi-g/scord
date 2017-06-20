@@ -59,6 +59,7 @@ A simple Discord selfbot written in Node.JS.
   * Google Search
   * Quote
   * Game API?
+  * Snippet (clipboard)
 
 ## Thanks for reading
 * And also thanks to [LazyShpee](https://github.com/LazyShpee/) for helping me countless times.
