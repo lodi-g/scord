@@ -60,6 +60,7 @@ A simple Discord selfbot written in Node.JS.
   * Quote
   * Game API?
   * Snippet (clipboard)
+  * Regional indicator comments
 
 ## Thanks for reading
 * And also thanks to [LazyShpee](https://github.com/LazyShpee/) for helping me countless times.
