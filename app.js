@@ -35,7 +35,17 @@ bot.on('message', (msg) => {
 });
 
 // Retrieve configuration
-const config = require(path.join(__dirname, 'config', 'config.json'));
+let config;
+if (process.argv.length === 4) {
+  config = {
+    token: process.argv[2],
+    prefix: process.argv[3]
+  };
+}
+else {
+  config = require(path.join(__dirname, 'config', 'config.json'));
+}
+
 if (typeof config.prefix !== 'string' || config.prefix === '') {
   console.error('scord: invalid prefix.');
   process.exit(1);

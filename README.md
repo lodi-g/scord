@@ -18,7 +18,8 @@ A simple Discord selfbot written in Node.JS.
 * Edit the `config/config.json` with your [Discord token](token.md) and wanted prefix.
 
 ### Starting
-* `node app.js`
+* `node app.js` => This will use the configuration file located in `config/config.json`. An example is available in the `config/config.example.json` file.
+* `node app.js token prefix` => This won't use any configuration file and instead will load the token and prefix from command line.
 
 ## Writing your own modules
 ### Intro
