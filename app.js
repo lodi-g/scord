@@ -35,8 +35,14 @@ bot.on('message', (msg) => {
 });
 
 // Retrieve configuration
-let config;
-if (process.argv.length === 4) {
+let config = {};
+if (process.env.SCORD_TOKEN && process.env.SCORD_PREFIX) {
+  config = {
+    token: process.env.SCORD_TOKEN,
+    prefix: process.env.SCORD_PREFIX
+  };
+}
+else if (process.argv.length === 4) {
   config = {
     token: process.argv[2],
     prefix: process.argv[3]
