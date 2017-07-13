@@ -5,7 +5,7 @@ A simple Discord selfbot written in Node.JS.
 ## Running scord
 
 ### The Docker way
-* `docker run -e SCORD_TOKEN='token' -e SCORD_PREFIX='prefix' lodig/scord`
+* `docker run -d -e SCORD_TOKEN='token' -e SCORD_PREFIX='prefix' lodig/scord`
 
 ### The manual way
 
