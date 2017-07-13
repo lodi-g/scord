@@ -2,22 +2,27 @@
 
 A simple Discord selfbot written in Node.JS.
 
-## Getting started
+## Running scord
 
-### Requirements
+### The Docker way
+* `docker run -e SCORD_TOKEN='token' -e SCORD_PREFIX='prefix' lodig/scord`
+
+### The manual way
+
+#### Requirements
 * Linux, macOS (probably works with others OS - not tested)
 * Node.JS >= v8.0.0 (probably works with older versions - not tested)
 * npm >= v5.0.0 (probably works with older versions - not tested)
 
-### Installing
+#### Installing
 * `git clone https://github.com/lodi-g/scord`
 * `cd scord && npm install`
 
-### Configuring
+#### Configuring
 * `cp config/config.example.json config/config.json`
 * Edit the `config/config.json` with your [Discord token](token.md) and wanted prefix.
 
-### Starting
+#### Starting
 * `node app.js` => This will use the configuration file located in `config/config.json`. An example is available in the `config/config.example.json` file.
 * `node app.js token prefix` => This won't use any configuration file and instead will load the token and prefix from command line.
 

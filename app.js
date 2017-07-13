@@ -49,7 +49,13 @@ else if (process.argv.length === 4) {
   };
 }
 else {
-  config = require(path.join(__dirname, 'config', 'config.json'));
+  try {
+    config = require(path.join(__dirname, 'config', 'config.json'));
+  }
+  catch (e) {
+    console.error('Couldn\'t load configuration.');
+    process.exit(1);
+  }
 }
 
 if (typeof config.prefix !== 'string' || config.prefix === '') {
