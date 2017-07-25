@@ -26,7 +26,11 @@ module.exports = {
     });
 
     msg.edit('Reloaded!')
-      .then()
+      .then(() => {
+        setTimeout(() => {
+          msg.delete().then().catch(console.error);
+        }, 500);
+      })
       .catch(console.error);
   }
 };
