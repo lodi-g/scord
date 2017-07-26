@@ -6,12 +6,13 @@ A simple Discord selfbot written in Node.JS.
 
 ### The Docker way
 * `docker run -d -e SCORD_TOKEN='token' -e SCORD_PREFIX='prefix' lodig/scord`
+* How to retrieve your token [here](token.md).
 
 ### The manual way
 
 #### Requirements
 * Linux, macOS (probably works with others OS - not tested)
-* Node.JS >= v8.0.0 (probably works with older versions - not tested)
+* Node.JS >= v7.5.0 (probably works with older versions - not tested)
 * npm >= v5.0.0 (probably works with older versions - not tested)
 
 #### Installing
