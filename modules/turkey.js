@@ -22,6 +22,12 @@ module.exports = {
       bot.removeListener('message', callback);
       enabled = false;
     }
-    msg.delete().then().catch(console.error);
+    msg.edit(`State: ${enabled ? 'enabled' : 'disabled'}`)
+      .then(() => {
+        setTimeout(() => {
+          msg.delete().then().catch(console.error);
+        }, 500);
+      })
+      .catch(console.error);
   }
 };
