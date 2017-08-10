@@ -1,3 +1,7 @@
+/*
+** Obviously this only works with scord started
+** on the same computer as you are
+*/
 const cb = require('clipboardy');
 const request = require('request');
 

@@ -90,5 +90,6 @@ fs.readdir(path.join(__dirname, 'modules'), (err, files) => {
 // Export manager and user in case it is needed for a module (eg help or reload)
 module.exports = {
   manager: manager,
-  user: bot.user
+  user: bot.user,
+  bot: bot
 }
